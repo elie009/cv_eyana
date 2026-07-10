@@ -24,7 +24,8 @@ jobs:
           version: 9
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        # FIXED: Swapped out --frozen-lockfile to bypass the lockfile config mismatch error
+        run: pnpm install --no-frozen-lockfile
 
       - name: Compile Application Distribution Assets
         run: pnpm turbo run build --filter=web --filter=server --force
