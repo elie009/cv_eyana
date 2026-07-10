@@ -8,7 +8,7 @@ import { I18nProvider } from "@lingui/react";
 vi.mock("@uiw/react-color-colorful", () => ({
 	default: () => null,
 }));
-
+ 
 const { ColorPicker } = await import("./color-picker");
 
 beforeAll(() => {
