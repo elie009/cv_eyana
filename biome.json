@@ -5,6 +5,12 @@
 		"clientKind": "git",
 		"useIgnoreFile": true
 	},
+	"ignore": [
+		"apps/web/public/icon/**",
+		"apps/web/public/logo/**",
+		"docs/logo/**",
+		"**/*.svg"
+	],
 	"files": {
 		"ignoreUnknown": true,
 		"includes": [
@@ -23,13 +29,7 @@
 	"formatter": {
 		"enabled": true,
 		"lineWidth": 120,
-		"indentStyle": "tab",
-		"ignore": [
-			"apps/web/public/icon/**",
-			"apps/web/public/logo/**",
-			"docs/logo/**",
-			"**/*.svg"
-		]
+		"indentStyle": "tab"
 	},
 	"assist": {
 		"actions": {
@@ -52,12 +52,6 @@
 	},
 	"linter": {
 		"enabled": true,
-		"ignore": [
-			"apps/web/public/icon/**",
-			"apps/web/public/logo/**",
-			"docs/logo/**",
-			"**/*.svg"
-		],
 		"rules": {
 			"preset": "recommended",
 			"a11y": {
