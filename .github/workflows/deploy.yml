@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # This triggers the auto-update whenever you push to the main branch
+      - main  # This triggers the auto-update whenever you push to main
 
 jobs:
   build-and-push:
