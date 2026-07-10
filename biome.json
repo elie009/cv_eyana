@@ -7,6 +7,12 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
+		"ignore": [
+			"apps/web/public/icon/**",
+			"apps/web/public/logo/**",
+			"docs/logo/**",
+			"**/*.svg"
+		],
 		"includes": [
 			"**",
 			"!**/.turbo",
@@ -48,6 +54,9 @@
 		"enabled": true,
 		"rules": {
 			"preset": "recommended",
+			"a11y": {
+				"noSvgWithoutTitle": "off"
+			},
 			"correctness": {
 				"useExhaustiveDependencies": "info"
 			},
