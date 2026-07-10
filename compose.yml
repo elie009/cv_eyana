@@ -27,11 +27,6 @@ services:
     command: redis-server --appendonly yes
     networks:
       - data_network
-    # Not exposed on the host by default. Redis can contain agent stream data
-    # including user chat content; keep it internal to the Docker network.
-    # Uncomment the ports block below if you need host access for tooling.
-    # ports:
-    #   - "127.0.0.1:6379:6379"
     volumes:
       - redis_data:/data
     healthcheck:
@@ -78,10 +73,8 @@ services:
         condition: service_healthy
 
   reactive_resume:
-    # image: ghcr.io/amruthpillai/reactive-resume:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # CHANGED: Swapped local build for your automated GitHub/Docker Hub image
+    image: elie0091/cs_eyana:latest
     networks:
       - data_network
       - storage_network
@@ -107,6 +100,14 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+
+  # ADDED: Watchtower will watch your elie0091/cs_eyana image and auto-restart it
+  watchtower:
+    image: containrrr/watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30 --cleanup
 
 volumes:
   postgres_data:
