@@ -7,12 +7,6 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"ignore": [
-			"apps/web/public/icon/**",
-			"apps/web/public/logo/**",
-			"docs/logo/**",
-			"**/*.svg"
-		],
 		"includes": [
 			"**",
 			"!**/.turbo",
@@ -29,7 +23,13 @@
 	"formatter": {
 		"enabled": true,
 		"lineWidth": 120,
-		"indentStyle": "tab"
+		"indentStyle": "tab",
+		"ignore": [
+			"apps/web/public/icon/**",
+			"apps/web/public/logo/**",
+			"docs/logo/**",
+			"**/*.svg"
+		]
 	},
 	"assist": {
 		"actions": {
@@ -52,6 +52,12 @@
 	},
 	"linter": {
 		"enabled": true,
+		"ignore": [
+			"apps/web/public/icon/**",
+			"apps/web/public/logo/**",
+			"docs/logo/**",
+			"**/*.svg"
+		],
 		"rules": {
 			"preset": "recommended",
 			"a11y": {
