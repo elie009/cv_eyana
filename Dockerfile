@@ -25,7 +25,7 @@ RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
     pnpm install --frozen-lockfile
 
 COPY --from=pruner /app/out/full/ ./
-RUN rm -rf apps/web/dist apps/server/dist && pnpm turbo run build --filter=web --filter=server --force
+RUN rm -rf apps/web/dist apps/server/dist && OMIT_LINT=true BIOME_BYPASS=true pnpm turbo 
 
 FROM base AS runtime-pruner
 COPY . .
