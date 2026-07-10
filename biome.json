@@ -5,16 +5,14 @@
 		"clientKind": "git",
 		"useIgnoreFile": true
 	},
-	"ignore": [
-		"apps/web/public/icon/**",
-		"apps/web/public/logo/**",
-		"docs/logo/**",
-		"**/*.svg"
-	],
 	"files": {
 		"ignoreUnknown": true,
 		"includes": [
 			"**",
+			"!apps/web/public/icon/**",
+			"!apps/web/public/logo/**",
+			"!docs/logo/**",
+			"!**/*.svg",
 			"!**/.turbo",
 			"!**/.output",
 			"!**/dist",
