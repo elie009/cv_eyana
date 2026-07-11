@@ -15,8 +15,9 @@ node_modules
 .pnpm-store
 
 # Build, test, and framework output
-dist
-**/dist
+# Dist is built inside the multi-stage Dockerfile; exclude local artifacts from the build context.
+apps/web/dist
+apps/server/dist
 .nitro
 .output
 .vercel

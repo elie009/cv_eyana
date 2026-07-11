@@ -13,25 +13,8 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
-
-      - name: Install Dependencies
-        # FIXED: Swapped out --frozen-lockfile to bypass the lockfile config mismatch error
-        run: pnpm install --no-frozen-lockfile
-
-      - name: Compile Application Distribution Assets
-        run: pnpm turbo run build --filter=web --filter=server --force
-        env:
-          OMIT_LINT: true
-          BIOME_BYPASS: true
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v4
@@ -45,3 +28,5 @@ jobs:
           context: .
           push: true
           tags: elie0091/cs_eyana:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
