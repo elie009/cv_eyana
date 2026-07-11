@@ -190,7 +190,7 @@ export const DonationBanner = () => (
 			</div>
 
 			{/* CTA Buttons */}
-			<m.div
+			{/* <m.div
 				className="flex flex-col items-center justify-center gap-4 sm:flex-row"
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -222,7 +222,7 @@ export const DonationBanner = () => (
 						</a>
 					}
 				/>
-			</m.div>
+			</m.div> */}
 
 			{/* Footer note */}
 			<m.p
