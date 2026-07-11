@@ -15,8 +15,7 @@ node_modules
 .pnpm-store
 
 # Build, test, and framework output
-dist
-**/dist
+# Keep apps/server/dist and apps/web/dist — CI builds them before docker build
 .nitro
 .output
 .vercel
